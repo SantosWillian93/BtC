@@ -1,0 +1,352 @@
+/* Importação das fontes (Também está no HTML, mas é bom garantir) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital@0;1&display=swap');
+
+/* Variáveis de Cor (Tema Escuro de Fantasia) */
+:root {
+    --cor-fundo: #1a1a1a;        /* Preto/Cinza bem escuro */
+    --cor-fundo-card: #2b2b2b; /* Cinza um pouco mais claro */
+    --cor-texto: #e0e0e0;       /* Texto principal (cinza claro) */
+    --cor-titulo: #e6c382;      /* Dourado/Amarelo para títulos */
+    --cor-borda: #444;          /* Bordas sutis */
+    
+    --fonte-titulo: 'Cinzel', serif;
+    --fonte-texto: 'Lora', serif;
+}
+
+/* --- ESTILOS GLOBAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.7;
+}
+
+/* Classe "Container" para centralizar o conteúdo */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* Centraliza na página */
+}
+
+/* --- BARRA DE NAVEGAÇÃO (NAV) --- */
+.menu-principal {
+    background-color: var(--cor-fundo-card);
+    border-bottom: 2px solid var(--cor-titulo);
+    padding: 15px 0;
+}
+
+.menu-principal .container {
+    display: flex; /* Coloca o Logo e a Lista lado a lado */
+    justify-content: space-between; /* Empurra um para cada lado */
+    align-items: center; /* Alinha verticalmente no centro */
+}
+
+.menu-principal .logo {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    font-size: 1.8em;
+}
+
+.menu-principal ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    display: flex; /* Coloca os itens da lista lado a lado */
+}
+
+.menu-principal ul li {
+    margin-left: 20px;
+}
+
+.menu-principal ul a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de HOVER (passar o mouse) e link ATIVO */
+.menu-principal ul a:hover,
+.menu-principal ul a.ativo {
+    color: var(--cor-titulo);
+}
+
+
+/* --- CABEÇALHO (Header) --- */
+.cabecalho-principal {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--cor-fundo); /* Pode ser uma imagem depois */
+}
+
+.cabecalho-principal h2 {
+    font-family: var(--fonte-texto);
+    font-style: italic;
+    font-size: 1.5em;
+    color: var(--cor-texto);
+}
+
+.cabecalho-principal h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 4em;
+    color: var(--cor-titulo);
+    text-shadow: 0 0 10px rgba(230, 195, 130, 0.5); /* Brilho dourado */
+}
+
+/* --- CONTEÚDO PRINCIPAL (Main) --- */
+.card-principal {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.card-principal h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+/* --- RODAPÉ (Footer) --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* --- ESTILOS DA PÁGINA DE RAÇAS --- */
+
+/* Cabeçalho das páginas secundárias (um pouco menor que o da home) */
+.cabecalho-secundario {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.cabecalho-secundario h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 3em; /* Um pouco menor que o 4em da home */
+    color: var(--cor-titulo);
+}
+
+.cabecalho-secundario p {
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--cor-texto);
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+/* Container dos Cards de Raça */
+.racas-container {
+    display: grid; /* Uau, CSS Grid! */
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+    gap: 25px; /* Espaço entre os cards */
+}
+
+/* Estilo individual do Card de Raça */
+.card-raca {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+    /* Adiciona uma borda esquerda colorida para dar estilo */
+    border-left: 5px solid var(--cor-titulo); 
+}
+
+.card-raca h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    margin-bottom: 15px;
+}
+
+.card-raca ul {
+    list-style: none; /* Remove bolinhas */
+    padding-left: 5px;
+}
+
+.card-raca li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVIDADE (Importante!) --- */
+/* Para telas menores (como celulares), força os cards a ficar um em cima do outro */
+@media (max-width: 768px) {
+    .racas-container {
+        /* Muda de 2 colunas para 1 coluna */
+        grid-template-columns: 1fr; 
+    }
+
+    .menu-principal .container {
+        flex-direction: column; /* Menu fica um em cima do outro */
+    }
+
+    .menu-principal .logo {
+        margin-bottom: 15px;
+    }
+
+    .menu-principal ul {
+        padding: 0;
+    }
+}
+
+/* --- ESTILOS DA PÁGINA DA ACADEMIA --- */
+
+/* Título para separar seções na mesma página */
+.titulo-secao {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    font-size: 2em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+/* Container das 3 Áreas de Ensino */
+.areas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas iguais */
+    gap: 25px;
+}
+
+.card-area {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    border-top: 5px solid var(--cor-titulo); /* Destaque no topo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-area:hover {
+    transform: translateY(-5px); /* Efeito de levantar */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-area h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Container das 2 Informações (Hierarquia e Exame) */
+.academia-info-container {
+    display: grid;
+    /* Duas colunas, a da esquerda é 1.5x maior que a da direita */
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card-info {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.card-info h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+.card-info ul {
+    list-style: none; /* Remove bolinhas */
+    padding-left: 5px;
+}
+
+.card-info li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* --- MAIS RESPONSIVIDADE --- */
+/* Adicionando regras para os novos containers */
+@media (max-width: 768px) {
+    .areas-container {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+
+    .academia-info-container {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+}
+
+/* --- ESTILOS DA PÁGINA FLORESTA DO CAOS --- */
+
+/* Card de destaque para a lenda do dragão */
+.card-destaque-floresta {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-titulo); /* Destaque na base */
+    margin-bottom: 20px;
+}
+
+.card-destaque-floresta h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Container do Bestiário (Duas Colunas) */
+.bestiario-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 30px; /* Espaço entre as colunas */
+}
+
+.coluna-bestiario {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.coluna-bestiario h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+.coluna-bestiario ul {
+    list-style: none; /* Remove bolinhas */
+}
+
+.coluna-bestiario li {
+    margin-bottom: 12px;
+}
+
+/* --- MAIS RESPONSIVIDADE --- */
+/* Adicionando a regra para o bestiário */
+@media (max-width: 768px) {
+    .bestiario-container {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+}
+
