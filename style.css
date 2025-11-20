@@ -357,7 +357,7 @@ footer {
     /* DICA: Troque essa URL por uma imagem de "Fantasy Council Hall" */
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9)), 
                       url('img/Campo.png'); 
-    background-size: contain
+    background-size: contain;
     background-position: center;
     background-attachment: fixed;
     min-height: 80vh;
