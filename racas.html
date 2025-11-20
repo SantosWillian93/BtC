@@ -23,82 +23,139 @@
         </div>
     </nav>
 
-    <header class="cabecalho-secundario">
-        <div class="container">
-            <h1>Raças de Beyond the Chaos</h1>
-            <p>Seis povos principais moldam o destino deste mundo, cada um com sua cultura, governo e afinidades únicas.</p>
-        </div>
-    </header>
-
-    <main class="container">
+    <main class="container salao-dos-sabios">
         
-        <div class="racas-container">
+        <header class="titulo-salao">
+            <h1>O Conselho dos Guardiões</h1>
+            <p>Selecione um Guardião para conhecer sua raça</p>
+        </header>
 
-            <section class="card-raca">
-                <h2>🧝 Elfos</h2>
+        <div class="galeria-sabios">
+            
+            <div class="sabio-item" onclick="mostrarRaca('elfos')">
+                <img src="img/SylwenArannis.png" alt="Sábia Elfa" class="img-sabio">
+                <span class="nome-sabio">Sylwen</span>
+            </div>
+
+            <div class="sabio-item" onclick="mostrarRaca('humanos')">
+                <img src="img/AldenValis.png" alt="Sábio Humano" class="img-sabio">
+                <span class="nome-sabio">Alden</span>
+            </div>
+
+            <div class="sabio-item" onclick="mostrarRaca('anoes')">
+                <img src="img/Thrain.png" alt="Sábio Anão" class="img-sabio">
+                <span class="nome-sabio">Thrain</span>
+            </div>
+
+            <div class="sabio-item" onclick="mostrarRaca('lizards')">
+                <img src="img/ZakarissSythaal.png" alt="Sábio Lizard" class="img-sabio">
+                <span class="nome-sabio">Zakariss</span>
+            </div>
+
+            <div class="sabio-item" onclick="mostrarRaca('alado')">
+                <img src="img/ElarionSkye.png" alt="Sábio Alado" class="img-sabio">
+                <span class="nome-sabio">Elarion</span>
+            </div>
+
+            <div class="sabio-item" onclick="mostrarRaca('orcs')">
+                <img src="img/GrommKarthan.png" alt="Sábio Orc" class="img-sabio">
+                <span class="nome-sabio">Gromm</span>
+            </div>
+
+        </div>
+
+        <div class="palco-detalhes">
+            
+            <div id="mensagem-inicial" class="card-raca ativo">
+                <h2>Escolha um representante acima</h2>
+                <p>Os Guardiões aguardam sua audiência.</p>
+            </div>
+
+            <section id="info-elfos" class="card-raca card-oculto">
+                <h2>🧝 Os Elfos</h2>
+                <p class="descricao-sabio">Representados pela Guardiã <strong>Sylwen Arannis</strong>.</p>
                 <ul>
-                    <li><strong>Governo:</strong> Senhores da Floresta (Conselho de anciões).</li>
-                    <li><strong>Cultura:</strong> Focada na harmonia com a natureza, vivem em cidades arbóreas.</li>
-                    <li><strong>Fé:</strong> Ligada aos ciclos naturais e elementos da floresta.</li>
-                    <li><strong>Afinidade Mágica:</strong> Terra e Vento.</li>
+                    <li><strong>Governo:</strong> Senhores da Floresta.</li>
+                    <li><strong>Cultura:</strong> Harmonia com a natureza, cidades arbóreas.</li>
+                    <li><strong>Afinidade:</strong> Terra e Vento.</li>
                 </ul>
             </section>
 
-            <section class="card-raca">
-                <h2>🛡️ Humanos</h2>
+            <section id="info-humanos" class="card-raca card-oculto">
+                <h2>🛡️ Os Humanos</h2>
+                <p class="descricao-sabio">Representados pelo Guardião <strong>Alden Valis</strong>.</p>
                 <ul>
-                    <li><strong>Governo:</strong> Lordes que governam reinos estruturados.</li>
-                    <li><strong>Cultura:</strong> Foco em comércio, inovação e estratégia militar.</li>
-                    <li><strong>Fé:</strong> Institucionalizada, com templos e sacerdotes.</li>
-                    <li><strong>Afinidade Mágica:</strong> Fogo e Vento.</li>
+                    <li><strong>Governo:</strong> Lordes e Reinos Estruturados.</li>
+                    <li><strong>Cultura:</strong> Comércio, inovação e estratégia militar.</li>
+                    <li><strong>Afinidade:</strong> Fogo e Vento.</li>
                 </ul>
             </section>
 
-            <section class="card-raca">
-                <h2>⛏️ Anões (Dwarfs)</h2>
+            <section id="info-anoes" class="card-raca card-oculto">
+                <h2>⛏️ Os Anões</h2>
+                <p class="descricao-sabio">Representados pelo Guardião <strong>Thrain Martelferro</strong>.</p>
                 <ul>
-                    <li><strong>Governo:</strong> Senhores de Montanha (Líderes de clãs).</li>
-                    <li><strong>Cultura:</strong> Especialistas em engenharia e metalurgia. Valorizam a tradição e a honra.</li>
-                    <li><strong>Fé:</strong> Culto aos ancestrais e ensinamentos dos Celestiais.</li>
-                    <li><strong>Afinidade Mágica:</strong> Terra e Fogo.</li>
+                    <li><strong>Governo:</strong> Senhores de Montanha.</li>
+                    <li><strong>Cultura:</strong> Engenharia, metalurgia e honra.</li>
+                    <li><strong>Afinidade:</strong> Terra e Fogo.</li>
                 </ul>
             </section>
 
-            <section class="card-raca">
-                <h2>🦎 Lizards (Homens-Lagarto)</h2>
+            <section id="info-lizards" class="card-raca card-oculto">
+                <h2>🦎 Os Lizards</h2>
+                <p class="descricao-sabio">Representados pelo Guardião <strong>Zakariss Sythaal</strong>.</p>
                 <ul>
-                    <li><strong>Governo:</strong> Oráculos do Rio (Líderes tribais).</li>
-                    <li><strong>Cultura:</strong> Sociedade tribal adaptada a pântanos e rios.</li>
-                    <li><strong>Fé:</strong> Práticas espirituais ligadas ao fluxo das águas e espíritos ancestrais.</li>
-                    <li><strong>Afinidade Mágica:</strong> Terra e Água.</li>
+                    <li><strong>Governo:</strong> Oráculos do Rio.</li>
+                    <li><strong>Cultura:</strong> Tribal, ligada aos pântanos e rios.</li>
+                    <li><strong>Afinidade:</strong> Terra e Água.</li>
                 </ul>
             </section>
 
-            <section class="card-raca">
+            <section id="info-alado" class="card-raca card-oculto">
                 <h2>🪂 Povo Alado</h2>
+                <p class="descricao-sabio">Representados pelo Guardião <strong>Elarion Skye</strong>.</p>
                 <ul>
-                    <li><strong>Governo:</strong> Altaneiros (Conselho de anciões).</li>
-                    <li><strong>Cultura:</strong> Vivem em cidades suspensas. São mensageiros e exploradores.</li>
-                    <li><strong>Fé:</strong> Acreditam estar mais próximos dos Celestiais ao voar.</li>
-                    <li><strong>Afinidade Mágica:</strong> Vento e Água.</li>
+                    <li><strong>Governo:</strong> Altaneiros.</li>
+                    <li><strong>Cultura:</strong> Cidades suspensas, mensageiros.</li>
+                    <li><strong>Afinidade:</strong> Vento e Água.</li>
                 </ul>
             </section>
 
-            <section class="card-raca">
-                <h2>🛡️ Orcs (Antes da Corrupção)</h2>
+            <section id="info-orcs" class="card-raca card-oculto">
+                <h2>🛡️ Os Orcs</h2>
+                <p class="descricao-sabio">Representados pelo legado de <strong>Gromm Karthan</strong>.</p>
                 <ul>
-                    <li><strong>Governo:</strong> Conselho de Guerreiros e Xamãs.</li>
-                    <li><strong>Cultura:</strong> Raça sábia e forte, com cultura baseada no respeito pela terra.</li>
-                    <li><strong>Corrupção:</strong> Foram corrompidos pela Magia Corrupta, tornando-se hostis.</li>
-                    <li><strong>Afinidade Mágica:</strong> Terra e Vento.</li>
+                    <li><strong>Governo:</strong> Antigo Conselho de Guerreiros.</li>
+                    <li><strong>Estado Atual:</strong> Corrompidos pela Magia Corrupta.</li>
+                    <li><strong>Afinidade:</strong> Terra e Vento.</li>
                 </ul>
             </section>
 
-        </div> </main>
+        </div>
+
+    </main>
 
     <footer>
         <p>&copy; 2025 - Willian Eleuterio - Universo "Beyond the Chaos"</p>
     </footer>
+
+    <script>
+        function mostrarRaca(racaId) {
+            // 1. Esconde todos os cards (inclusive a mensagem inicial)
+            const todosCards = document.querySelectorAll('.card-raca');
+            todosCards.forEach(card => {
+                card.classList.remove('ativo');
+                card.classList.add('card-oculto');
+            });
+
+            // 2. Mostra o card selecionado
+            const cardSelecionado = document.getElementById('info-' + racaId);
+            if (cardSelecionado) {
+                cardSelecionado.classList.remove('card-oculto');
+                cardSelecionado.classList.add('ativo');
+            }
+        }
+    </script>
 
 </body>
 </html>
